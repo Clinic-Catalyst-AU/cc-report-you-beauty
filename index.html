@@ -87,6 +87,17 @@ p { font-size:0.9rem; color:var(--text-mid); font-weight:300; line-height:1.8; }
 .vs-col { padding:1.5rem; border-radius:10px; }
 .vs-us { background:rgba(0,180,160,0.08); border:1px solid rgba(0,180,160,0.2); }
 
+.price-card { background:rgba(0,180,160,0.06); border:2px solid var(--teal); border-radius:12px; padding:2rem; text-align:center; }
+.price-tag { font-family:'Montserrat',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:900; color:var(--teal-bright); }
+.price-period { font-size:0.75rem; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.1em; }
+.includes-list { list-style:none; text-align:left; margin-top:1.2rem; }
+.includes-list li { padding:0.35rem 0; font-size:0.78rem; color:var(--text-mid); border-bottom:1px solid rgba(255,255,255,0.04); display:flex; align-items:center; gap:0.4rem; }
+.includes-list li::before { content:"\2713"; color:var(--teal-bright); font-weight:700; }
+.discount-badge { display:inline-block; background:var(--peach); color:var(--dark); font-family:'Montserrat',sans-serif; font-size:0.7rem; font-weight:800; padding:0.35rem 0.9rem; border-radius:4px; text-transform:uppercase; letter-spacing:0.06em; margin-top:1rem; }
+.faq-item { padding:0.8rem 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+.faq-q { font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--peach); margin-bottom:0.3rem; }
+.faq-a { font-size:0.8rem; color:var(--text-faint); }
+
 @media print {
   .deck { overflow:visible; scroll-snap-type:none; }
   .slide { min-height:100vh; page-break-after:always; }
@@ -101,6 +112,13 @@ p { font-size:0.9rem; color:var(--text-mid); font-weight:300; line-height:1.8; }
   .cover-hero h1 { font-size:1.6rem; }
   .scroll-arrow { display:none; }
   .slide-counter { display:none; }
+  .price-card { padding:1.2rem; }
+  .price-tag { font-size:1.8rem; }
+  .includes-list li { font-size:0.7rem; padding:0.25rem 0; }
+  .discount-badge { font-size:0.6rem; padding:0.25rem 0.6rem; }
+  .faq-item { padding:0.5rem 0; }
+  .faq-q { font-size:0.68rem; }
+  .faq-a { font-size:0.72rem; }
 }
 </style>
 </head>
@@ -454,85 +472,337 @@ p { font-size:0.9rem; color:var(--text-mid); font-weight:300; line-height:1.8; }
   </div>
 </section>
 
-<!-- ========== 16. OPTION 1 - FULL PACKAGE ========== -->
+<!-- ========== STANDALONE: META ADS & LEAD FOLLOW UP ========== -->
 <section class="slide slide-html alt">
-  <div class="dot-overlay"></div>
   <div class="glow glow-tl"></div>
   <div class="inner">
-    <div style="text-align:center; margin-bottom:1.5rem;">
-      <p class="label label-peach">Option One</p>
-      <h2>We Do It <span class="teal">For You</span></h2>
-      <p style="max-width:550px; margin:0 auto;">No hidden extras. No nickel-and-diming. This is what hiring an agency normally costs.</p>
-    </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem 2rem; max-width:900px; margin:0 auto;">
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 1rem; border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span style="font-size:0.82rem; color:var(--text-mid); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--teal-bright);">&#10003;</span> Meta Ads strategy, creative &amp; management</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--text-faint);">$350/wk</span>
+    <p class="label">How it works</p>
+    <h2>Meta Ads &amp; <span class="teal">Lead Follow Up</span></h2>
+    <p style="max-width:700px; margin-bottom:1rem; font-size:0.85rem;">We do all the hard work. You wait for leads to come in and do what you're best at - providing an incredible service.</p>
+    <div class="split-even">
+      <div>
+        <h3 style="color:var(--peach); font-size:0.75rem; margin-bottom:0.6rem;">We take care of</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.2rem 1.2rem; margin-bottom:1rem;">
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> Creating offers</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> SMS notifications &amp; credits</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> Writing copy</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> CRM automations</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> Content for ads</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> Calling leads</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> Setting up text</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> Responding to leads</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> Email notifications</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> Technical setup</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> Regulatory Compliance Certificate</div>
+          <div style="font-size:0.75rem; color:var(--text-mid); padding:0.15rem 0;"><span style="color:var(--teal-bright);">&#10003;</span> Ongoing support</div>
+        </div>
+        <div class="faq-item" style="padding:0.5rem 0;">
+          <p class="faq-q" style="font-size:0.72rem;">What should my ad spend be?</p>
+          <p class="faq-a" style="font-size:0.74rem;">$30/day minimum, paid directly to Meta on top of the weekly fee.</p>
+        </div>
+        <div class="faq-item" style="padding:0.5rem 0;">
+          <p class="faq-q" style="font-size:0.72rem;">Are calls, SMS &amp; emails included?</p>
+          <p class="faq-a" style="font-size:0.74rem;">Yep - all inclusive. Lead calling, SMS credits, email and CRM access. Regulatory Compliance Certificate handled.</p>
+        </div>
+        <div class="faq-item" style="padding:0.5rem 0;">
+          <p class="faq-q" style="font-size:0.72rem;">Do I have to make the videos?</p>
+          <p class="faq-a" style="font-size:0.74rem;">No. Send us raw footage and we'll edit. Authentic video and photos always perform best.</p>
+        </div>
       </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 1rem; border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span style="font-size:0.82rem; color:var(--text-mid); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--teal-bright);">&#10003;</span> Ad creative &amp; video content</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--text-faint);">$300/wk</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 1rem; border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span style="font-size:0.82rem; color:var(--text-mid); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--teal-bright);">&#10003;</span> Lead calling &amp; SMS to close leads</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--text-faint);">$250/wk</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 1rem; border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span style="font-size:0.82rem; color:var(--text-mid); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--teal-bright);">&#10003;</span> Bespoke CRM setup &amp; configured</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--text-faint);">$200/wk</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 1rem; border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span style="font-size:0.82rem; color:var(--text-mid); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--teal-bright);">&#10003;</span> Automated nurture sequences</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--text-faint);">$200/wk</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 1rem; border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span style="font-size:0.82rem; color:var(--text-mid); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--teal-bright);">&#10003;</span> Skin assessment lead capture quiz</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--text-faint);">$150/wk</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 1rem; border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span style="font-size:0.82rem; color:var(--text-mid); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--teal-bright);">&#10003;</span> After-hours automation</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--text-faint);">$150/wk</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 1rem; border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span style="font-size:0.82rem; color:var(--text-mid); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--teal-bright);">&#10003;</span> Automated review collection</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--text-faint);">$100/wk</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 1rem; border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span style="font-size:0.82rem; color:var(--text-mid); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--teal-bright);">&#10003;</span> Local SEO &amp; GEO / AI search</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--text-faint);">$250/wk</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 1rem; border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span style="font-size:0.82rem; color:var(--text-mid); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--teal-bright);">&#10003;</span> Reporting dashboard &amp; monthly strategy</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--text-faint);">$200/wk</span>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:center;">
+        <img src="assets/meta-ad-mockup-lush.png" alt="Sample Meta ad" style="width:100%; border-radius:8px; max-height:380px; object-fit:contain; box-shadow:0 4px 20px rgba(0,0,0,0.3);">
+        <div class="price-card" style="padding:1rem 1.2rem; text-align:center;">
+          <p class="price-period" style="margin-bottom:0.1rem;">Weekly</p>
+          <div style="font-family:'Montserrat',sans-serif; font-size:0.85rem; color:var(--text-faint); text-decoration:line-through; line-height:1;">$699/wk</div>
+          <div style="font-family:'Montserrat',sans-serif; font-size:1.7rem; font-weight:900; color:var(--teal-bright); margin-top:0.2rem;">$499<span style="font-size:0.5em; color:var(--text-mid); font-weight:600;">/wk</span></div>
+          <p style="font-size:0.6rem; color:var(--peach); margin-top:0.2rem; font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">ABM Rate</p>
+          <p style="font-size:0.66rem; color:var(--text-faint); margin-top:0.4rem;">Setup $799<br>waived w/ Platinum</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== 17. OPTION 1 INVESTMENT ========== -->
+<!-- ========== STANDALONE: GOOGLE ADS MANAGEMENT ========== -->
+<section class="slide slide-html">
+  <div class="dot-overlay"></div>
+  <div class="glow glow-br"></div>
+  <div class="inner">
+    <p class="label">Standalone Service</p>
+    <h2>Google Ads <span class="teal">Management</span></h2>
+    <div class="split-even" style="margin-top:1rem;">
+      <div>
+        <p style="font-size:0.82rem; margin-bottom:1rem;">Our team of certified professionals create, manage and optimise your Google Ads campaigns to ensure maximum ROI. Thorough keyword research, compelling ad copy, and advanced targeting to reach your ideal patients. Real-time analytics + detailed performance reports so we continuously refine your campaigns.</p>
+        <h3 style="color:var(--peach); font-size:0.75rem; margin-bottom:0.6rem;">Initial Setup Includes</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Landing page edits for conversion</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Google Tag Manager setup</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Google Analytics setup</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Google Ads Manager setup</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Conversion tracking configured</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem;">
+        <img src="assets/google-ads-dashboard.png" alt="Google Ads PPC dashboard with conversion tracking" style="max-height:380px; object-fit:contain; width:100%; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.3);">
+        <div class="price-card" style="padding:1rem 1.5rem; width:100%;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+            <div style="text-align:left;">
+              <p class="price-period" style="margin-bottom:0.1rem;">Weekly</p>
+              <div style="font-family:'Montserrat',sans-serif; font-size:1.5rem; font-weight:900; color:var(--teal-bright);">$299<span style="font-size:0.55em; color:var(--text-mid); font-weight:600;">/wk + GST</span></div>
+            </div>
+            <div style="text-align:right; border-left:1px solid rgba(255,255,255,0.1); padding-left:1rem;">
+              <p class="price-period" style="margin-bottom:0.1rem;">Setup</p>
+              <div style="font-family:'Montserrat',sans-serif; font-size:1.5rem; font-weight:900; color:var(--peach);">$2,500</div>
+              <p style="font-size:0.58rem; color:var(--text-faint); font-style:italic; margin:0;">Waived with Platinum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STANDALONE: LOCAL SEO & GEO ========== -->
+<section class="slide slide-html alt">
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <p class="label">Standalone Service</p>
+    <h2>Local SEO &amp; <span class="teal">GEO</span></h2>
+    <div class="split-even" style="margin-top:1rem;">
+      <div>
+        <p style="font-size:0.82rem; margin-bottom:1rem;">Transform your online presence and get found where it matters - both on Google AND in the AI-powered search tools your clients are already using (ChatGPT, Claude, Perplexity, Google AI Overviews). One fresh blog article per month to keep your content relevant, thorough keyword research, and technical enhancements that drive organic traffic and increase visibility.</p>
+        <h3 style="color:var(--peach); font-size:0.75rem; margin-bottom:0.6rem;">Recommended Package Includes</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> 10 target keywords</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Onsite SEO</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Offsite SEO + GEO (AI Search Optimisation)</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Google My Business optimisation</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Manual high-quality backlinks</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Monthly performance report</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> 1x blog article per month with GEO coded in</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem;">
+        <img src="assets/seo-dashboard.png" alt="SEO performance dashboard - rankings, traffic, site audit, backlinks" style="max-height:480px; object-fit:contain; width:100%; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.3);">
+        <div class="price-card" style="padding:1rem 1.5rem; text-align:center; width:100%;">
+          <p class="price-period" style="margin-bottom:0.2rem;">Recommended Package</p>
+          <div style="font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:900; color:var(--teal-bright);">$299<span style="font-size:0.5em; color:var(--text-mid); font-weight:600;">/wk + GST</span></div>
+          <p style="font-size:0.7rem; color:var(--text-faint); margin-top:0.2rem;">+ GST</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STANDALONE: WEEKLY EMAIL & SMS MARKETING ========== -->
+<section class="slide slide-html">
+  <div class="dot-overlay"></div>
+  <div class="glow glow-br"></div>
+  <div class="inner">
+    <p class="label">Standalone Service</p>
+    <h2>Weekly Email &amp; <span class="teal">SMS Marketing</span></h2>
+    <div class="split-even" style="margin-top:1rem;">
+      <div>
+        <p style="font-size:0.82rem; margin-bottom:1rem;">Your existing client base receives 2x branded newsletter &amp; SMS campaigns per month in your brand voice. Education about specific skin concerns and a MAXIMUM of two offers - to educate, drive engagement, and give your existing clients more understanding of what you can do for them. They may decide they want both treatment AND product pathways.</p>
+        <h3 style="color:var(--peach); font-size:0.75rem; margin-bottom:0.6rem;">Nurture &amp; Offers</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> 2x branded email campaigns per month</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> 2x SMS campaigns per month</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Written in your brand voice</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Aligned with organic AND paid ads strategy</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Maximum 2 offers per month (no fatigue)</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Education-led to deepen client understanding</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.8rem;">
+        <div style="position:relative; width:100%; height:400px;">
+          <img src="assets/newsletter-education-cropped.jpg" alt="Newsletter - education" style="position:absolute; left:10%; top:30px; width:38%; max-height:340px; object-fit:cover; object-position:top; border-radius:8px; box-shadow:0 4px 18px rgba(0,0,0,0.45); transform:rotate(-10deg); z-index:1;">
+          <img src="assets/newsletter-close-cropped.jpg" alt="Newsletter - close" style="position:absolute; left:52%; top:30px; width:38%; max-height:340px; object-fit:cover; object-position:top; border-radius:8px; box-shadow:0 4px 18px rgba(0,0,0,0.45); transform:rotate(10deg); z-index:2;">
+          <img src="assets/newsletter-hook-cropped.jpg" alt="Newsletter - hook (winter skin season)" style="position:absolute; left:28%; top:0; width:46%; max-height:400px; object-fit:cover; object-position:top; border-radius:8px; box-shadow:0 8px 28px rgba(0,0,0,0.6); transform:rotate(0deg); z-index:3;">
+        </div>
+        <div class="price-card" style="padding:1rem 1.5rem; text-align:center; width:100%;">
+          <p class="price-period" style="margin-bottom:0.2rem;">Weekly Subscription</p>
+          <div style="font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:900; color:var(--teal-bright);">$50<span style="font-size:0.5em; color:var(--text-mid); font-weight:600;">/wk + GST</span></div>
+          <p style="font-size:0.7rem; color:var(--text-faint); margin-top:0.2rem;">No setup fee</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STANDALONE: SOCIAL MEDIA MANAGEMENT ========== -->
+<section class="slide slide-html alt">
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <p class="label">Standalone Service</p>
+    <h2>Organic Social <span class="teal">Media Management</span></h2>
+    <div class="split-even" style="margin-top:1rem;">
+      <div>
+        <p style="font-size:0.82rem; margin-bottom:1rem;">Elevate your brand's social media presence with our Social Media Management service. Three engaging posts per week and one custom reel, complete with targeted hashtags to maximise reach and engagement. Every six weeks our team visits your clinic to capture fresh, high-quality content - ensuring your social media stays vibrant and up to date.</p>
+        <h3 style="color:var(--peach); font-size:0.75rem; margin-bottom:0.6rem;">Weekly Deliverables</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> 3 engaging posts per week</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> 1 custom reel per week</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Targeted hashtag research</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Every 6 weeks - in-clinic content capture visit</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Strategy aligned with offers &amp; ad campaigns</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Engagement &amp; community building</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; width:100%; max-width:380px;">
+          <img src="assets/social-instagram-phone.png" alt="Instagram profile" style="width:100%; border-radius:6px; object-fit:contain; max-height:420px; box-shadow:0 4px 18px rgba(0,0,0,0.4);">
+          <img src="assets/social-reel-phone.png" alt="Reel" style="width:100%; border-radius:6px; object-fit:contain; max-height:420px; box-shadow:0 4px 18px rgba(0,0,0,0.4);">
+        </div>
+        <div class="price-card" style="padding:1rem 1.5rem; width:100%;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+            <div style="text-align:left;">
+              <p class="price-period" style="margin-bottom:0.1rem;">Weekly</p>
+              <div style="font-family:'Montserrat',sans-serif; font-size:1.5rem; font-weight:900; color:var(--teal-bright);">$330<span style="font-size:0.55em; color:var(--text-mid); font-weight:600;">/wk + GST</span></div>
+            </div>
+            <div style="text-align:right; border-left:1px solid rgba(255,255,255,0.1); padding-left:1rem;">
+              <p class="price-period" style="margin-bottom:0.1rem;">Setup</p>
+              <div style="font-family:'Montserrat',sans-serif; font-size:1.3rem; font-weight:900; color:var(--peach);">$899</div>
+              <p style="font-size:0.55rem; color:var(--text-faint); font-style:italic; margin:0;">FREE w/ another service</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STANDALONE: SOCIAL MEDIA REPORTING ========== -->
+<section class="slide slide-html">
+  <div class="dot-overlay"></div>
+  <div class="glow glow-br"></div>
+  <div class="inner">
+    <p class="label">Standalone Service</p>
+    <h2>Social Media <span class="teal">Reporting</span></h2>
+    <p style="max-width:780px; margin-bottom:1.5rem; font-size:0.85rem;">Every social media client receives a monthly performance report - audience growth, engagement, organic vs paid reach, and demographic breakdowns. Real numbers so you know exactly what's working and where to invest next.</p>
+    <div style="text-align:center;">
+      <img src="assets/social-analytics-dashboard.png" alt="Social Report - Total Likes, Audience Growth, Age and Gender breakdown" style="max-width:560px; width:100%; border-radius:10px; box-shadow:0 6px 28px rgba(0,0,0,0.45);">
+    </div>
+  </div>
+</section>
+
+<!-- ========== PLATINUM GROWTH PACKAGE ========== -->
+<section class="slide slide-html alt">
+  <div class="dot-overlay"></div>
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <div style="text-align:center; margin-bottom:1.2rem;">
+      <p class="label">Everything Included</p>
+      <h2>Platinum <span class="teal">Growth Package</span></h2>
+      <p style="max-width:600px; margin:0 auto; font-size:0.82rem;">Your complete done-for-you patient acquisition system. Ads. Content. Follow Up. Conversions. Retention. <span class="peach">Everything handled for you under one strategy.</span></p>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.8rem; max-width:1000px; margin:0 auto 1rem;">
+      <div class="card" style="padding:0.9rem;">
+        <h4 style="font-size:0.7rem; margin-bottom:0.5rem;">Meta Ads &amp; Lead Follow Up</h4>
+        <p style="font-size:0.62rem; color:var(--text-faint); line-height:1.5; margin:0;">Calls, Emails &amp; SMS</p>
+        <ul style="list-style:none; padding:0; margin:0.5rem 0 0;">
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Offer creation</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Copywriting</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Video editing</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Landing page creation</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Strategic Meta ad campaigns</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Calls, SMS &amp; email follow up</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Lead nurture &amp; conversion</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:0.9rem;">
+        <h4 style="font-size:0.7rem; margin-bottom:0.5rem;">Google Ads Management</h4>
+        <p style="font-size:0.62rem; color:var(--text-faint); line-height:1.5; margin:0;">High-intent search</p>
+        <ul style="list-style:none; padding:0; margin:0.5rem 0 0;">
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> High-intent search campaigns</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Keyword strategy</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Ad copywriting</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Landing page optimisation</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Conversion tracking</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Ongoing optimisation &amp; reporting</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Maximise ROI &amp; bookings</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:0.9rem;">
+        <h4 style="font-size:0.7rem; margin-bottom:0.5rem;">Social Media Management</h4>
+        <p style="font-size:0.62rem; color:var(--text-faint); line-height:1.5; margin:0;">Organic content</p>
+        <ul style="list-style:none; padding:0; margin:0.5rem 0 0;">
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Reel editing</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Caption writing</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Content posting</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Strategy &amp; campaign alignment</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Consistent brand presence</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Engagement &amp; community</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:0.9rem;">
+        <h4 style="font-size:0.7rem; margin-bottom:0.5rem;">SEO &amp; GEO</h4>
+        <p style="font-size:0.62rem; color:var(--text-faint); line-height:1.5; margin:0;">Google + AI search</p>
+        <ul style="list-style:none; padding:0; margin:0.5rem 0 0;">
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Website SEO optimisation</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> SEO metadata implementation</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> GEO targeting</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Google &amp; Maps optimisation</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> AI Search (ChatGPT) visibility</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Long-term organic growth</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:0.9rem;">
+        <h4 style="font-size:0.7rem; margin-bottom:0.5rem;">Direct Email &amp; SMS</h4>
+        <p style="font-size:0.62rem; color:var(--text-faint); line-height:1.5; margin:0;">Database marketing</p>
+        <ul style="list-style:none; padding:0; margin:0.5rem 0 0;">
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Automated nurture sequences</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Promotional campaigns</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Reactivation of old leads</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Increase rebookings &amp; retention</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.5;"><span style="color:var(--teal-bright);">&#10003;</span> Improve patient lifetime value</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:0.9rem; background:rgba(232,168,124,0.05); border-color:rgba(232,168,124,0.2);">
+        <h4 style="font-size:0.7rem; margin-bottom:0.5rem; color:var(--peach);">Why Clinics Choose Us</h4>
+        <ul style="list-style:none; padding:0; margin:0.5rem 0 0;">
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.6;"><span style="color:var(--peach);">&#9889;</span> Fast Lead Response</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.6;"><span style="color:var(--peach);">&#128200;</span> High-Converting Offers</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.6;"><span style="color:var(--peach);">&#127916;</span> Professional Video Ads</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.6;"><span style="color:var(--peach);">&#127919;</span> Conversion-Focused Systems</li>
+          <li style="font-size:0.65rem; color:var(--text-mid); line-height:1.6;"><span style="color:var(--peach);">&#128101;</span> Long-Term Patient Retention</li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align:center; font-family:'Montserrat',sans-serif; font-size:0.95rem; font-weight:800; color:var(--text-mid); margin-top:0.8rem;">TOTAL VALUE <span style="text-decoration:line-through; color:var(--text-faint);">$1,677</span> <span class="teal">per week</span></p>
+  </div>
+</section>
+
+<!-- ========== THE INVESTMENT ========== -->
 <section class="slide slide-html teal-bg">
   <div class="dot-overlay"></div>
-  <div class="glow glow-center" style="opacity:0.1;"></div>
+  <div class="glow glow-br"></div>
   <div class="inner" style="text-align:center;">
-    <p class="label label-peach">Option One - The Investment</p>
+    <p class="label label-peach">The Investment</p>
     <h2>All of This. <span class="peach">One Price.</span></h2>
-    <div style="max-width:500px; margin:1.5rem auto 0;">
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:1rem 1.5rem; border-bottom:1px solid rgba(255,255,255,0.1);">
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.85rem; font-weight:700; color:var(--text-mid);">Total weekly value</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:1.4rem; font-weight:900; color:var(--text-faint); text-decoration:line-through;">$2,150/wk</span>
+    <div style="max-width:520px; margin:1.5rem auto 0;">
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.8rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+        <span style="font-family:'Montserrat',sans-serif; font-size:0.8rem; font-weight:700; color:var(--text-mid);">Total weekly value</span>
+        <span style="font-family:'Montserrat',sans-serif; font-size:1.2rem; font-weight:900; color:var(--text-faint); text-decoration:line-through;">$1,677/wk</span>
       </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.8rem 1.5rem; border-bottom:1px solid rgba(255,255,255,0.1);">
-        <span style="font-family:'Montserrat',sans-serif; font-size:0.85rem; font-weight:700; color:var(--text-mid);">Setup &amp; onboarding</span>
-        <span style="font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:700; color:var(--text-faint); text-decoration:line-through;">$4,997</span>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:0.7rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+        <span style="font-family:'Montserrat',sans-serif; font-size:0.8rem; font-weight:700; color:var(--text-mid);">Setup &amp; onboarding</span>
+        <span style="font-family:'Montserrat',sans-serif; font-size:0.95rem; font-weight:700; color:var(--text-faint); text-decoration:line-through;">$4,997 WAIVED</span>
       </div>
-      <div style="margin-top:2rem; padding:2rem; background:rgba(0,212,188,0.08); border:2px solid var(--teal-bright); border-radius:12px;">
-        <p style="font-family:'Montserrat',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--peach); margin-bottom:0.5rem;">Your Price</p>
-        <div style="font-family:'Montserrat',sans-serif; font-size:clamp(2.5rem,5vw,3.5rem); font-weight:900; color:var(--teal-bright);">$999<span style="font-size:0.4em; color:var(--text-mid); font-weight:600;">/week</span></div>
-        <p style="font-size:0.75rem; color:var(--text-faint); margin-top:0.5rem;">+ ad spend (paid directly to Meta &amp; Google, $30/day minimum)</p>
-        <div style="margin-top:1.2rem; display:inline-block; background:var(--peach); color:var(--dark); font-family:'Montserrat',sans-serif; font-size:0.7rem; font-weight:800; padding:0.4rem 1.2rem; border-radius:4px; text-transform:uppercase; letter-spacing:0.06em;">Setup fee waived - you save $4,997</div>
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:0.7rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+        <div style="text-align:left;">
+          <p style="font-family:'Montserrat',sans-serif; font-size:0.8rem; font-weight:700; color:var(--text-mid); margin:0;">Google Ads Setup</p>
+          <p style="font-size:0.6rem; color:var(--text-faint); margin:0.2rem 0 0; line-height:1.4;">Landing page edits + Google Tag Manager + Google Analytics + Google Ads Manager</p>
+        </div>
+        <span style="font-family:'Montserrat',sans-serif; font-size:0.95rem; font-weight:700; color:var(--peach); white-space:nowrap;">$2,500</span>
       </div>
-      <p style="font-size:0.75rem; color:var(--text-faint); margin-top:1rem;">Month by month. No lock-in. 30 days written notice.</p>
-      <p style="font-size:0.85rem; color:var(--peach-light); margin-top:1.5rem; font-style:italic;">Or - keep scrolling. We think there's a better-value path for a clinic your size.</p>
+      <div style="margin-top:1.5rem; padding:1.6rem; background:rgba(0,212,188,0.08); border:2px solid var(--teal-bright); border-radius:12px;">
+        <p style="font-family:'Montserrat',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--peach); margin-bottom:0.4rem;">Your Price</p>
+        <div style="font-family:'Montserrat',sans-serif; font-size:clamp(2.2rem,5vw,3.2rem); font-weight:900; color:var(--teal-bright);">$999<span style="font-size:0.4em; color:var(--text-mid); font-weight:600;">/week + GST</span></div>
+        <p style="font-size:0.72rem; color:var(--text-faint); margin-top:0.4rem;">ABM member rate &middot; $4,997 setup fee waived</p>
+        <div style="margin-top:1rem; display:inline-block; background:var(--peach); color:var(--dark); font-family:'Montserrat',sans-serif; font-size:0.65rem; font-weight:800; padding:0.35rem 1rem; border-radius:4px; text-transform:uppercase; letter-spacing:0.06em;">Save $678/wk + $4,997 setup</div>
+      </div>
+      <p style="font-size:0.65rem; color:var(--text-faint); margin-top:0.8rem; font-style:italic;">Ad spend separate, paid directly to Meta. $30/day minimum recommended.</p>
     </div>
   </div>
 </section>
